@@ -7,7 +7,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<style type="text/css">
-		
+		#video {
+			padding: 0;
+			margin-top: -50px;
+		}
 	</style>
 </head>
 <body>
@@ -36,5 +39,38 @@
 	</form>
 	<p>Input field outside form example: <input type="text" name="text6" form="myForm"></p>
 	<hr>
+
+	<h2>Basic Video and Audio Example</h2>
+	<p>
+		<video width="640" height="480" controls="controls" id="video">
+			<source src="media/samplevideo.mp4" type="video/mp4">
+			Your browser does not support playing this video.
+		</video>
+	</p>
+	<p>
+		<button id="play">Play Video</button>
+	</p>
+	<p>
+		<audio controls="controls" autoplay="autoplay" id="audio">
+			<source src="media/mygirl.mp3" type="audio/mpeg">
+			Your browser does not support playing this music.
+		</audio>
+	</p>
+
+	<script type="text/javascript">
+		// Set the audio volume to half
+		document.getElementById("audio").volume = 0.5;
+		// A separate Play button for the video
+		document.getElementById("play").onclick = function() {
+			var myvideo = document.getElementById("video");
+			if (myvideo.ended || myvideo.paused) {
+				document.getElementById("video").play();
+				this.innerHTML = "Pause Video";
+			} else {
+				document.getElementById("video").pause();
+				this.innerHTML = "Play Video";
+			}
+		}
+	</script>
 </body>
 </html>
