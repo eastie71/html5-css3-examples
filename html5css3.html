@@ -11,6 +11,9 @@
 			padding: 0;
 			margin-top: -50px;
 		}
+		#mycanvas {
+			border: 1px solid grey;
+		}
 	</style>
 </head>
 <body>
@@ -56,6 +59,10 @@
 			Your browser does not support playing this music.
 		</audio>
 	</p>
+	<hr>
+
+	<h2>Canvas Examples</h2>
+	<canvas id="mycanvas" width="775" height="550"></canvas>
 
 	<script type="text/javascript">
 		// Set the audio volume to half
@@ -71,6 +78,66 @@
 				this.innerHTML = "Play Video";
 			}
 		}
+
+		// Canvas Examples
+		var mycanvas = document.getElementById("mycanvas");
+		var	context = mycanvas.getContext("2d");
+		var gradient = context.createLinearGradient(300, 250, 500, 450);
+		var textGradient = context.createLinearGradient(250,500, 500,500);
+
+		// gradient color for square from white to grey
+		gradient.addColorStop(0, "white");
+		gradient.addColorStop(1, "grey");
+
+		// gradient color for text from red to green
+		textGradient.addColorStop(0, "red");
+		textGradient.addColorStop(1, "green");
+
+		context.font = "30px Arial";
+		context.fillText("Horizontal Line", 100, 170);
+		context.fillText("Circle Arc", 500, 150);
+		context.fillText("Circle", 60, 450);
+		context.font = "25px Arial";
+		context.fillText("Grey Gradient", 535, 320);
+		context.fillText("Red Strokes Cross", 535, 380);
+
+		// Draw a grey square
+		context.fillStyle = gradient;
+		context.fillRect(300, 250, 200, 200);
+		
+		// Draw a red cross on the square
+		context.beginPath();
+		context.moveTo(300, 250);
+		context.lineTo(500, 450);
+		context.lineWidth = 3;
+		context.strokeStyle = "red";
+		context.moveTo(500, 250);
+		context.lineTo(300, 450);
+		context.stroke();
+
+		// Draw blue horizontal line
+		context.beginPath();
+		context.strokeStyle = "blue";
+		context.moveTo(100,100);
+		context.lineTo(300,100);
+		context.stroke();
+
+		// Draw a green edged circle
+		context.beginPath();
+		context.strokeStyle = "green";
+		context.arc(100,350,50, 0, 2*Math.PI);
+		context.stroke();
+
+		// Draw a red arc of a circle
+		context.beginPath();
+		context.strokeStyle = "red";
+		context.arc(550,100,50, Math.PI, 2*Math.PI * 3/4);
+		context.stroke();
+
+		// Gradient text
+		context.fillStyle = textGradient;
+		//context.font = "30px Arial";
+		context.fillText("Text with Color Gradient", 270, 500);
 	</script>
 </body>
 </html>
