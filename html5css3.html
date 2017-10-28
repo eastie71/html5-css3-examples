@@ -54,6 +54,8 @@
 		<button id="play">Play Video</button>
 	</p>
 	<p>
+		Here we have the song autoplay on page load
+		<br>
 		<audio controls="controls" autoplay="autoplay" id="audio">
 			<source src="media/mygirl.mp3" type="audio/mpeg">
 			Your browser does not support playing this music.
@@ -63,6 +65,40 @@
 
 	<h2>Canvas Examples</h2>
 	<canvas id="mycanvas" width="775" height="550"></canvas>
+	<hr>
+
+	<h2>Other HTML5 Elements</h2>
+	<article>
+		This is inside an "article" element
+	</article>
+
+	<!-- My own defined container via the "createElement" in JS -->
+	<mycontainer>
+		This is inside my own defined "container" called "mycontainer"
+	</mycontainer>
+
+	<figure>
+		Here we have a "figure" element<br>
+		<img data-category="Comedy" id="comedy" src="images/brent.jpg" alt="David Brent">
+		<figcaption>
+			<p><mark>David Brent (this is highlighted using the "mark" tag)</mark> <small>(The Office - BBC series) - this is using the "small" tag</small></p>
+		</figcaption>
+	</figure>
+
+	<!-- Range slider -->
+	<p>
+		Range slider
+		<br>
+		<input type="range" name="range1" min="0" max="100" step="10">
+	</p>
+
+	<!-- Editable List by the User! -->
+	<p>This unordered list below is editable - give it a try!</p>
+	<ul contenteditable="true">
+		<li>Buy milk!</li>
+		<li>Buy bread</li>
+		<li>Buy beer</li>
+	</ul>
 
 	<script type="text/javascript">
 		// Set the audio volume to half
