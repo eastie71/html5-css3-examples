@@ -14,6 +14,41 @@
 		#mycanvas {
 			border: 1px solid grey;
 		}
+		#gradient {
+			width: 400px;
+			height: 250px;
+			background-color: blue;
+			background: linear-gradient(to top left, white, red, green, blue, yellow);
+		}
+		#radial-gradient {
+			width: 500px;
+			height: 250px;
+			background-color: red;
+			background: radial-gradient(white, yellow, red);
+		}
+		#greeny {
+			width: 300px;
+			height: 150px;
+			background-color: green;
+			background: linear-gradient(to bottom left, green, yellow);
+		}
+		.green-shadow {
+			text-shadow: 2px 2px 4px green;
+			color: white;
+		}
+		.double-shadow {
+			text-shadow: 2px 2px 4px blue, -5px -5px 4px red;
+			color: white;
+		}
+		h4 {
+			text-shadow: 0 0 6px red;
+		}
+		#shadow {
+			width: 100px;
+			height: 100px;
+			background-color: antiquewhite;
+			box-shadow: 12px 12px 6px grey;
+		}
 	</style>
 </head>
 <body>
@@ -99,6 +134,16 @@
 		<li>Buy bread</li>
 		<li>Buy beer</li>
 	</ul>
+	<hr>
+
+	<h2>Gradients and Shadows</h2>
+	<h3 class="green-shadow">This text has a green shadow to it!</h3>
+	<h3 class="double-shadow">This text has a double shadow</h3>
+	<h4>This text will have a bit of a glow to it!</h4>
+	<div id="shadow"><small>Its a box shadow effect</small></div>
+	<div id="gradient"><h4>This is a rainbow gradient from bottom right (white, red, green, blue, yellow)</h4></div>
+	<div id="radial-gradient">A radial gradient</div>
+	<div id="greeny">A linear gradient from Top right to Bottom left (green to yellow)</div>
 
 	<script type="text/javascript">
 		// Set the audio volume to half
