@@ -7,6 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<style type="text/css">
+		body {
+			font-family: sans-serif;
+		}
 		#video {
 			padding: 0;
 			margin-top: -50px;
@@ -48,6 +51,64 @@
 			height: 100px;
 			background-color: antiquewhite;
 			box-shadow: 12px 12px 6px grey;
+		}
+
+		.box {
+			width: 100px;
+			height: 100px;
+			margin: 50px;
+			border-radius: 10px;
+			transition: 2s ease-in-out;
+			font-family: "Arial";
+			font-size: 80%;
+			font-weight: bold;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			display: inline-flex;
+		}
+		#trans-box {
+			background-color: blue;
+			color: white;
+		}
+		#trans-box:hover {
+			transform: translate(50px, 50px);
+		}
+		#rotate-box {
+			background-color: lightgreen;
+		}
+		#rotate-box:hover {
+			transform: rotateZ(180deg);
+		}
+		#scale-box {
+			background-color: lightblue;
+		}
+		#scale-box:hover {
+			transform: scale(1.5,2);
+		}
+		#skew-box {
+			background-color: #89C35C;
+		}
+		#skew-box:hover {
+			transform: skew(20deg, 30deg);
+		}
+		#rotatex-box {
+			background-color: #955BC2;
+		}
+		#rotatex-box:hover {
+			transform: rotateX(360deg);
+		}
+		#rotatey-box {
+			background-color: #CD7F32;
+		}
+		#rotatey-box:hover {
+			transform: rotateY(360deg);
+		}
+		#rotate3d-box {
+			background-color: #E7A1B0;
+		}
+		#rotate3d-box:hover {
+			transform: rotate3d(1,-1,1, 180deg);
 		}
 	</style>
 </head>
@@ -91,6 +152,9 @@
 	<p>
 		Here we have the song autoplay on page load
 		<br>
+		<!--
+		<audio controls="controls" id="audio">
+		-->			
 		<audio controls="controls" autoplay="autoplay" id="audio">
 			<source src="media/mygirl.mp3" type="audio/mpeg">
 			Your browser does not support playing this music.
@@ -144,6 +208,17 @@
 	<div id="gradient"><h4>This is a rainbow gradient from bottom right (white, red, green, blue, yellow)</h4></div>
 	<div id="radial-gradient">A radial gradient</div>
 	<div id="greeny">A linear gradient from Top right to Bottom left (green to yellow)</div>
+	<hr>
+
+	<h2>Translations and transitions (hover mouse over boxes)</h2>
+	<div class="box" id="trans-box">Translate</div>
+	<div class="box" id="rotate-box">Rotate</div>
+	<div class="box" id="scale-box">Scale</div>
+	<div class="box" id="skew-box">Skew</div>
+	<br>
+	<div class="box" id="rotatex-box">Rotate X</div>
+	<div class="box" id="rotatey-box">Rotate Y</div>
+	<div class="box" id="rotate3d-box">3D Rotate</div>
 
 	<script type="text/javascript">
 		// Set the audio volume to half
